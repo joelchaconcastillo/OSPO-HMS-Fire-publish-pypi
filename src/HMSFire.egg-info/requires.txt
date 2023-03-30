@@ -1,5 +1,0 @@
-basemap
-datetime
-matplotlib
-pandas
-requests
