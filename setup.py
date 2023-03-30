@@ -2,20 +2,20 @@ from setuptools import setup, find_packages
 
 
 setup(
-    name='HMSFirepy',
+    name='HMSFire',
     version='0.1',
     license='MIT',
     author="Joel",
     author_email='joel.chacon@cimat.mx',
     packages=find_packages('src'),
     package_dir={'': 'src'},
-    url='https://github.com/joelchaconcastillo/OSPO-HMS-Fire-publish-pypi',
+    url='https://ospo-hms-fire.readthedocs.io/en/latest/',
     keywords='HMSFirepy project',
     install_requires=[
           'basemap',
           'pandas',
           'matplotlib',
-          'request',
+          'requests',
           'datetime',
       ],
 
