@@ -41,12 +41,13 @@ class HMSFire:
     data2 = data2.set_index(colsGroup+['Time'])
     cols = colsGroup + [pd.Grouper(freq=freq, level='Time')]
     return data2.groupby(cols)['FRP'].mean().reset_index(name='FRP')
+
   def getBoundingBoxCounty(self, county:str='Dallas'):
-    boundingBox = pd.read_csv('US_County_Boundingboxes.csv')
+    boundingBox = pd.read_csv(os.path.dirname(os.path.realpath(__file__))+'/US_County_Boundingboxes.csv')
     return boundingBox[boundingBox.COUNTY_NAME=='Dallas'].xmin.min(), boundingBox [boundingBox.COUNTY_NAME=='Dallas'].ymin.min(), boundingBox [boundingBox.COUNTY_NAME=='Dallas'].xmax.max(), boundingBox [boundingBox.COUNTY_NAME=='Dallas'].ymax.max()
 
   def getBoundingBoxState(self, state:str='Texas'):
-    boundingBox = pd.read_csv('US_State_Bounding_Boxes.csv')
+    boundingBox = pd.read_csv(os.path.dirname(os.path.realpath(__file__))+'/US_State_Bounding_Boxes.csv')
     box = boundingBox[boundingBox.NAME=='Texas'][['xmin', 'ymin', 'xmax', 'ymax']].values[0]
     return box[0], box[1], box[2], box[3]
   def adquire(self, startDate:str, endDate:str, skipDays:int=0):
@@ -120,12 +121,12 @@ class HMSFire:
 
   def satelites(self):
     return self.data.Satellite.unique()
-HMSF = HMSFire(startDate='2020-01-01', endDate='2023-02-01')
-  data = HMSF.getDataFrame()
-  HMSF.plot()
-print(HMSF.satelites())
-HMSF.plot(minlon=-125, minlat=25, maxlon=-60, maxlat=50)
-minlon, minlat, maxlon, maxlat = HMSF.getBoundingBoxCounty(county='Dallas')
-HMSF.plot(minlon=minlon, minlat=minlat, maxlon=maxlon, maxlat=maxlat)
-minlon, minlat, maxlon, maxlat = HMSF.getBoundingBoxState(state='Texas')
-HMSF.plot(minlon=minlon, minlat=minlat, maxlon=maxlon, maxlat=maxlat)
+###HMSF = HMSFire(startDate='2020-01-01', endDate='2023-02-01')
+###  data = HMSF.getDataFrame()
+###  HMSF.plot()
+###print(HMSF.satelites())
+###HMSF.plot(minlon=-125, minlat=25, maxlon=-60, maxlat=50)
+###minlon, minlat, maxlon, maxlat = HMSF.getBoundingBoxCounty(county='Dallas')
+###HMSF.plot(minlon=minlon, minlat=minlat, maxlon=maxlon, maxlat=maxlat)
+###minlon, minlat, maxlon, maxlat = HMSF.getBoundingBoxState(state='Texas')
+###HMSF.plot(minlon=minlon, minlat=minlat, maxlon=maxlon, maxlat=maxlat)
