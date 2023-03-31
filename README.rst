@@ -1,8 +1,8 @@
 
 
-HMSFirepy Project
+HMSFire Project
 ===============
-HMSFirepy make searching, downloading and retrieving data of the Hazard Mapping System easy.
+HMSFire make searching, downloading and retrieving data of the Hazard Mapping System easy.
 
 To take a look at some examples make sure to read `<https://ospo-hms-fire.readthedocs.io/en/latest/>`
 Installing
