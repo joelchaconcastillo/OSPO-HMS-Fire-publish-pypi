@@ -10,12 +10,14 @@ Installing
 
 .. code-block:: bash
 
-    pip install HMSFirepy
+    pip install HMSFire
 
 Usage
 =====
 
 .. code-block:: bash
 
-    >>> from src.HMSF import HMSF
-    >>> HMSF = HMSFire(startDate='2020-01-01', endDate='2023-02-01')
+    >>>from OSPO.HMSFire import HMSF
+    >>>Fires = HMSF.HMSFire(startDate='2023-01-01', endDate='2023-02-01')
+    >>>data = Fires.getDataFrame()
+    >>>Fires.plot()
