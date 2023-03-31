@@ -26,7 +26,7 @@ class HMSFire:
     return self.data
 
   def getXarray(self):
-    return data.set_index('Time').to_xarray()
+    return self.data.set_index('Time').to_xarray()
 
   def update(self, startDate:str, endDate:str):
     ##TODO: apply a smart update...
