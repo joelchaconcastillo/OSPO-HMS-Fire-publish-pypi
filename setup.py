@@ -9,6 +9,7 @@ setup(
     author_email='joel.chacon@cimat.mx',
     packages=find_packages('src'),
     package_dir={'': 'src'},
+    description='aaaaaaaa',
     url='https://ospo-hms-fire.readthedocs.io/en/latest/',
     keywords='HMSFirepy project',
     summary='test description',
